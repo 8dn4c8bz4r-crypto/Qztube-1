@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="kk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#101014">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="QazaqTube">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="apple-touch-icon" href="/icon.svg">
+  <link rel="stylesheet" href="/style.css">
+  <title>QazaqTube</title>
+</head>
+<body>
+<header class="top">
+  <div class="brand"><span class="logo">▶</span> Qazaq<span>Tube</span></div>
+  <button class="iconbtn" id="searchToggle" aria-label="Іздеу">⌕</button>
+</header>
+<div class="searchbar hidden" id="searchbar"><input id="searchInput" placeholder="Видео іздеу..."></div>
+<main>
+  <section id="home" class="page active">
+    <div class="chips"><button class="chip selected" data-filter="all">Барлығы</button><button class="chip" data-filter="video">Видео</button><button class="chip" data-filter="short">Shorts</button></div>
+    <div id="videoList" class="video-list"><p class="empty">Әзірге видео жоқ. «＋» арқылы видео сілтемесін қос.</p></div>
+  </section>
+  <section id="shorts" class="page">
+    <div id="shortList" class="short-list"><p class="empty">Әзірге Shorts жоқ.</p></div>
+  </section>
+  <section id="upload" class="page">
+    <div class="panel">
+      <h2>Видео қосу</h2>
+      <label>Видео атауы<input id="title" maxlength="120" placeholder="Мысалы: Домбыра күйі"></label>
+      <label>Видео сілтемесі<input id="url" placeholder="https://... (YouTube немесе видео URL)"></label>
+      <label>Сипаттамасы<textarea id="description" placeholder="Қысқаша сипаттама"></textarea></label>
+      <label>Түрі<select id="type"><option value="video">Кәдімгі видео</option><option value="short">Shorts</option></select></label>
+      <button class="primary" id="addVideo">Видео қосу</button>
+      <p class="hint">Бұл бастапқы нұсқада видео файлды тікелей жүктеу емес, видеоның сілтемесін қосу қарастырылған.</p>
+      <p id="uploadMsg" class="hint"></p>
+    </div>
+  </section>
+  <section id="profile" class="page">
+    <div class="panel"><h2>Профиль</h2><p>QazaqTube-қа қош келдің!</p><p class="hint">Бұл — бастапқы нұсқа. Аккаунт жүйесі кейін қосылады.</p></div>
+  </section>
+</main>
+<nav class="bottom">
+  <button class="navitem active" data-page="home"><b>⌂</b><small>Басты</small></button>
+  <button class="navitem" data-page="shorts"><b>▣</b><small>Shorts</small></button>
+  <button class="addnav" data-page="upload">＋</button>
+  <button class="navitem" data-page="profile"><b>◉</b><small>Профиль</small></button>
+</nav>
+<script src="/app.js"></script>
+</body>
+</html>
